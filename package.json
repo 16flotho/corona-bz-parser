@@ -1,0 +1,24 @@
+{
+  "name": "corona-bz-crawler",
+  "description": "",
+  "version": "1.0.0",
+  "author": "",
+  "type": "module",
+  "main": "corona-bz-crawler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/16flotho/corona-bz-crawler.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/16flotho/corona-bz-crawler/issues"
+  },
+  "homepage": "https://github.com/16flotho/corona-bz-crawler#readme",
+  "dependencies": {
+    "node-fetch": "^3.2.10"
+  },
+  "devDependencies": {}
+}
