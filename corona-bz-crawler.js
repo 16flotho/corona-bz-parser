@@ -1,17 +1,8 @@
-import fetch from 'node-fetch'
-/**
- * Data to be fetched:
- * - Tested / Positive
- * - People on intensive care unit?
- * - Healed
- * - Deseased
- * - Seven day Incidence
- *
- */
+import fetch from 'node-fetch';
 
-let topBarURL = "https://afbs.provinz.bz.it/upload/coronavirus/topbox.js";
-let chartKh = "https://afbs.provinz.bz.it/upload/coronavirus/chart_DE_Kh30.js";
-let chartQuar = "https://afbs.provinz.bz.it/upload/coronavirus/chart_DE_Quar.js"
+const topBarURL = "https://afbs.provinz.bz.it/upload/coronavirus/topbox.js";
+const chartKh = "https://afbs.provinz.bz.it/upload/coronavirus/chart_DE_Kh30.js";
+const chartQuar = "https://afbs.provinz.bz.it/upload/coronavirus/chart_DE_Quar.js";
 
 
 let fieldnameMap = new Map([
@@ -26,7 +17,7 @@ let fieldnameMap = new Map([
     ["Krankenhäuser", "patHos"], 
     ["Krankenhäuser Private", "patHosPriv"],
     ["Personen in Quarantäne/häuslicher Isolation", "quarantaene"]
-])
+]);
 
 let date = new Date().toLocaleDateString(Intl.DateTimeFormat(), { day: "2-digit", month: "2-digit", year: "numeric", timeZone: "Europe/Rome" });
 
@@ -51,17 +42,16 @@ async function parseTopBox(res) {
         lines = lines.filter(entry => entry.includes("span") && !entry.includes("dateNow"));
         for(let i = 0; i < lines.length; i += 2) {
             let line = lines[i];
-            console.log(line)
             if(lines[i + 1]?.includes(date)) {
                 let parsedFieldname = fieldnameMap.get(line.substring(line.indexOf('chardtt'), line.lastIndexOf("'")))
                 let data = line.substring(line.indexOf("<span>") + "<span>".length, line.indexOf('</span>')).split(" ")
                 let value = data[0];
                 let delta = data[1].replaceAll(/\(|\)/g, "");
-                console.log(parsedFieldname+ value+ delta)
-                coronaData[parsedFieldname] = value;
                 if(parsedFieldname != "posRat") {
-                    coronaData[parsedFieldname + "_delta"] = delta;
+                    coronaData[parsedFieldname] = parseInt(value);
+                    coronaData[parsedFieldname + "_delta"] = parseInt(delta);
                 } else {
+                    coronaData[parsedFieldname] = value;
                     coronaData[parsedFieldname] += delta
                 }
             } else {
