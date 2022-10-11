@@ -1,23 +1,23 @@
 {
-  "name": "corona-bz-crawler",
+  "name": "corona-bz-parser",
   "description": "",
   "version": "1.0.0",
   "author": "",
   "type": "module",
-  "main": "corona-bz-crawler.js",
+  "main": "corona-bz-parser.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "run": "node corona-bz-crawler.js"
+    "run": "node corona-bz-parser.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/16flotho/corona-bz-crawler.git"
+    "url": "git+https://github.com/16flotho/corona-bz-parser.git"
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/16flotho/corona-bz-crawler/issues"
+    "url": "https://github.com/16flotho/corona-bz-parser/issues"
   },
-  "homepage": "https://github.com/16flotho/corona-bz-crawler#readme",
+  "homepage": "https://github.com/16flotho/corona-bz-parser#readme",
   "dependencies": {
     "node-fetch": "^3.2.10"
   },
