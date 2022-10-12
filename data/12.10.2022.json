@@ -1,0 +1,23 @@
+{
+    "positiv": 272816,
+    "positiv_delta": 831,
+    "actPositiv": 6179,
+    "actPositiv_delta": -264,
+    "geheilt": 265081,
+    "geheilt_delta": 1093,
+    "verstorben": 1556,
+    "verstorben_delta": 2,
+    "getestet": 859755,
+    "getestet_delta": 154,
+    "7Tinzidenz": 989,
+    "7Tinzidenz_delta": 13,
+    "posRat": "28,474%",
+    "patInt": 5,
+    "patInt_delta": 0,
+    "patHos": 127,
+    "patHos_delta": -12,
+    "patHosPriv": 6,
+    "patHosPriv_delta": 0,
+    "quarantaene": 6179,
+    "quarantaene_delta": -264
+}
