@@ -20,7 +20,7 @@ let fieldnameMap = new Map([
     ["Personen in Quarantäne/häuslicher Isolation", "quarantaene"]
 ]);
 
-let date = new Date().toLocaleDateString(Intl.DateTimeFormat(), { day: "2-digit", month: "2-digit", year: "numeric", timeZone: "Europe/Rome" });
+let date = new Date().toLocaleDateString('de-DE', { day: "2-digit", month: "2-digit", year: "numeric", timeZone: "Europe/Rome" });
 
 
 Promise.all([
