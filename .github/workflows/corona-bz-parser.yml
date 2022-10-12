@@ -21,6 +21,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+        
+      - uses: actions/checkout@v3
+        with:
+          path: gh-pages
+          ref: gh-pages
 
       # Runs a single command using the runners shell
       - name: Setup Node.js environment
@@ -32,10 +37,17 @@ jobs:
       - name: Run Script
         run: npm run 
         
+      - name: Move file to gh-pages and move into gh-pages folder
+        run: |
+          for file in data/*.json; do mv $file gh-pages/data/; done 
+          rm -rf data
+          cd gh-pages
+      
       - name: Commit files
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
+          git pull
           git commit -m "New Data" -a
           
       - name: Push changes

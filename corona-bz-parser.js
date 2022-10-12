@@ -1,4 +1,5 @@
 import fetch from 'node-fetch';
+import fs from 'fs';
 
 const topBarURL = "https://afbs.provinz.bz.it/upload/coronavirus/topbox.js";
 const chartKh = "https://afbs.provinz.bz.it/upload/coronavirus/chart_DE_Kh30.js";
@@ -29,7 +30,8 @@ Promise.all([
 ]).then(promises => {
     let data = {};
     Object.assign(data, ...promises)
-    console.log(data)
+    fs.mkdirSync("data", { recursive: true });
+    fs.writeFileSync(`data/${date}.json`, JSON.stringify(data, null, 4));
 }).catch(reason => {
     console.error(reason)
 })
