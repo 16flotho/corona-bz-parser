@@ -45,7 +45,7 @@ jobs:
       - name: Move file to gh-pages and move into gh-pages folder
         run: |
           mkdir gh-pages/data
-          for file in data/*.json; do mv $file gh-pages/$file; done 
+          for file in main/data/*.json; do mv $file gh-pages/data/"${file##*/}"; done 
           rm -rf data
         shell: bash
         working-directory: .
