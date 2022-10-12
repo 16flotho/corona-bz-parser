@@ -48,6 +48,7 @@ jobs:
           for file in data/*.json; do mv $file gh-pages/$file; done 
           rm -rf data
         shell: bash
+        working-directory: .
       
       - name: Commit files
         run: |
