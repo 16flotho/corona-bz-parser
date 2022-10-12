@@ -39,6 +39,7 @@ jobs:
         
       - name: Move file to gh-pages and move into gh-pages folder
         run: |
+          mkdir gh-pages/data
           for file in data/*.json; do mv $file gh-pages/$file; done 
           rm -rf data
           cd gh-pages
