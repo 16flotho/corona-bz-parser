@@ -34,6 +34,7 @@ Promise.all([
     fs.writeFileSync(`data/${date}.json`, JSON.stringify(data, null, 4));
 }).catch(reason => {
     console.error(reason)
+    console.error(date)
 })
 
 async function parseTopBox(res) {
