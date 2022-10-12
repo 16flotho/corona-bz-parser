@@ -30,28 +30,23 @@ jobs:
           path: gh-pages
           ref: gh-pages
 
-      - name: Move into main
-        run: |
-          cd main
-          pwd
-
       # Runs a single command using the runners shell
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.5.0
         
       - name: Install Dependencies
         run: npm install
+        working-directory: ./main
         
       - name: Run Script
         run: npm run run
+        working-directory: ./main
         
       - name: Move file to gh-pages and move into gh-pages folder
         run: |
-          cd ..
           mkdir gh-pages/data
           for file in data/*.json; do mv $file gh-pages/$file; done 
           rm -rf data
-          cd gh-pages
         shell: bash
       
       - name: Commit files
@@ -61,11 +56,13 @@ jobs:
           git pull
           git add .
           git commit -m "New Data"
+        working-directory: ./gh-pages
           
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
+        working-directory: ./gh-pages
          
       
