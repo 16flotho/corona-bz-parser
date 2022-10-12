@@ -80,7 +80,7 @@ async function parseChartData(res) {
                 coronaData[fieldname] = columns[i + dataRows][lastColumnElementIndex];
                 coronaData[fieldname + "_delta"] = coronaData[fieldname] - columns[i + dataRows][lastColumnElementIndex - 1]
             } else {
-                reject("Data is not up to date: " + lines[i + 1])
+                reject("Data is not up to date: " + columns[i][lastColumnElementIndex])
                 return;
             }
         }
