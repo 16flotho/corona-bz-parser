@@ -31,7 +31,9 @@ jobs:
           ref: gh-pages
 
       - name: Move into main
-        run: cd main
+        run: |
+          cd main
+          pwd
 
       # Runs a single command using the runners shell
       - name: Setup Node.js environment
