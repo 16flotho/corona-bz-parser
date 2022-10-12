@@ -35,7 +35,7 @@ jobs:
         run: npm install
         
       - name: Run Script
-        run: npm run 
+        run: npm run run
         
       - name: Move file to gh-pages and move into gh-pages folder
         run: |
