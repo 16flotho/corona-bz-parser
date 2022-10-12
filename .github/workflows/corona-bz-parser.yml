@@ -21,11 +21,17 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+        with:
+          path: main
+          ref: main
         
       - uses: actions/checkout@v3
         with:
           path: gh-pages
           ref: gh-pages
+
+      - name: Move into main
+        run: cd main
 
       # Runs a single command using the runners shell
       - name: Setup Node.js environment
@@ -39,6 +45,7 @@ jobs:
         
       - name: Move file to gh-pages and move into gh-pages folder
         run: |
+          cd ..
           mkdir gh-pages/data
           for file in data/*.json; do mv $file gh-pages/$file; done 
           rm -rf data
