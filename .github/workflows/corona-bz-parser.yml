@@ -103,7 +103,7 @@ jobs:
             import json
             import os
             
-            date = "${{ steps.check.outputs.DATE }}"
+            date = "${{ needs.check.outputs.date }}"
             keys = { "curPositive" : "Momentan positiv", "deceased": "Verstorben", "healed": "Geheilt", "patInt": "Intensiv-Patienten", "7Dincidence": "7-Tage-Inzidenz" }
 
             with open("data/" + date + ".json", "r") as f:
