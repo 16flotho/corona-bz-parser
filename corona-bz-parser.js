@@ -7,17 +7,17 @@ const chartQuar = "https://afbs.provinz.bz.it/upload/coronavirus/chart_DE_Quar.j
 
 
 let fieldnameMap = new Map([
-    ["chardttPOS", "positiv"],
-    ["chardttACT", "actPositiv"],
-    ["chardttHEA", "geheilt"],
-    ["chardttDEA", "verstorben"],
-    ["chardttTESTED", "getestet"],
-    ["chardttINZ", "7Tinzidenz"],
+    ["chardttPOS", "positive"],
+    ["chardttACT", "curPositive"],
+    ["chardttHEA", "healed"],
+    ["chardttDEA", "deceased"],
+    ["chardttTESTED", "tested"],
+    ["chardttINZ", "7Dincidence"],
     ["chardttPOSRAT", "posRat"],
     ["Intensivbetten", "patInt"],
     ["Krankenhäuser", "patHos"], 
     ["Krankenhäuser Private", "patHosPriv"],
-    ["Personen in Quarantäne/häuslicher Isolation", "quarantaene"]
+    ["Personen in Quarantäne/häuslicher Isolation", "quarantine"]
 ]);
 
 let date = new Date().toLocaleDateString('de-DE', { day: "2-digit", month: "2-digit", year: "numeric", timeZone: "Europe/Rome" });
@@ -33,8 +33,8 @@ Promise.all([
     fs.mkdirSync("data", { recursive: true });
     fs.writeFileSync(`data/${date}.json`, JSON.stringify(data, null, 4));
 }).catch(reason => {
-    console.error(reason)
-    console.error(date)
+    console.log(reason)
+    exit(1);
 })
 
 async function parseTopBox(res) {
