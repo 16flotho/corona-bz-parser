@@ -115,9 +115,7 @@ jobs:
                 sign = "+" if data[key + "_delta"] > 0 else ""
                 tweet += value + ": " + str(data[key]) + " (" + sign + str(data[key + "_delta"]) + ")" + "\n"
 
-            env_file = os.getenv("GITHUB_OUTPUT")
-
-            with open(env_file, "a") as f:
+            with open($GITHUB_OUTPUT, "a") as f:
                 f.write("TWEET=" + tweet)
         
       - name: Tweet
