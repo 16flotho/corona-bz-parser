@@ -84,7 +84,7 @@ jobs:
 
   tweet:
     runs-on: ubuntu-latest
-    needs: [ build ]
+    needs: [ check, build ]
     steps:
       - uses: actions/checkout@v3
         with:
@@ -103,7 +103,7 @@ jobs:
             import json
             import os
             
-            date = "${{ needs.check.outputs.date }}"
+            date = "${{ needs.check.outputs.date }}""
             keys = { "curPositive" : "Momentan positiv", "deceased": "Verstorben", "healed": "Geheilt", "patInt": "Intensiv-Patienten", "7Dincidence": "7-Tage-Inzidenz" }
 
             with open("data/" + date + ".json", "r") as f:
