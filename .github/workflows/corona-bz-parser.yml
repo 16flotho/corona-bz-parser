@@ -115,16 +115,12 @@ jobs:
                 sign = "+" if data[key + "_delta"] > 0 else ""
                 tweet += value + ": " + str(data[key]) + " (" + sign + str(data[key + "_delta"]) + ")" + "\n"
 
-            output = os.environ.get("GITHUB_OUTPUT")
-            os.environ["GITHUB_OUTPUT"] = output + "TWEET=" + tweet
+            set_env("TWEET", tweet)
 
-      - name: Output Tweet
-        run: echo $GITHUB_OUTPUT
-        
       - name: Tweet
         uses: ethomson/send-tweet-action@v1
         with:
-          status: ${{ steps.tweet.outputs.TWEET }}
+          status: ${{ env.TWEET }}
           consumer-key: ${{ secrets.TWITTER_CONSUMER_KEY }}
           consumer-secret: ${{ secrets.TWITTER_CONSUMER_SECRET }}
           access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
