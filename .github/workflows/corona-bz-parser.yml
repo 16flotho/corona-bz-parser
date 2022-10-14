@@ -116,7 +116,9 @@ jobs:
                 tweet += value + ": " + str(data[key]) + " (" + sign + str(data[key + "_delta"]) + ")" + "\n"
 
             with open(os.getenv("GITHUB_ENV"), "a") as env:
-                print(f"TWEET={tweet}", file=env)
+                print(f"TWEET<<EOF", file=env)
+                print(tweet, file=env)
+                print("EOF", file=env)
 
       - name: Tweet
         uses: ethomson/send-tweet-action@v1
