@@ -115,13 +115,12 @@ jobs:
                 sign = "+" if data[key + "_delta"] > 0 else ""
                 tweet += value + ": " + str(data[key]) + " (" + sign + str(data[key + "_delta"]) + ")" + "\n"
 
-            with open($GITHUB_OUTPUT, "a") as f:
-                f.write("TWEET=" + tweet)
+            print("::set-output name=tweet::" + tweet)
         
       - name: Tweet
         uses: ethomson/send-tweet-action@v1
         with:
-          status: ${{ steps.tweet.outputs.TWEET }}
+          status: ${{ steps.tweet.outputs.tweet }}
           consumer-key: ${{ secrets.TWITTER_CONSUMER_KEY }}
           consumer-secret: ${{ secrets.TWITTER_CONSUMER_SECRET }}
           access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
