@@ -1,5 +1,7 @@
 # Corona South Tyrol parser and API
-An *inofficial* parser and API for COVID-19-Data of South Tyrol from the website https://www.provinz.bz.it/sicherheit-zivilschutz/zivilschutz/aktuelle-daten-zum-coronavirus.asp. The data gets parsed daily and supplied via `https://16flotho.github.io/corona-bz-parser/`
+An *inofficial* parser and API for COVID-19-Data of South Tyrol from the website https://www.provinz.bz.it/sicherheit-zivilschutz/zivilschutz/aktuelle-daten-zum-coronavirus.asp. The data gets parsed daily and supplied via `https://16flotho.github.io/corona-bz-parser/` 
+
+The data is additionally posted on Twitter on the Account [@CovidSuedtirol](https://twitter.com/CovidSuedtirol)
 
 ## Usage of the API
 Use `https://16flotho.github.io/corona-bz-parser/data/<date>.json` to get the data of the specified date. \
