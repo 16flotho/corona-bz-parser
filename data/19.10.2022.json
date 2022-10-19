@@ -1,0 +1,23 @@
+{
+    "positive": 277563,
+    "positive_delta": 641,
+    "curPositive": 5890,
+    "curPositive_delta": -651,
+    "healed": 270108,
+    "healed_delta": 1291,
+    "deceased": 1565,
+    "deceased_delta": 1,
+    "tested": 860630,
+    "tested_delta": 141,
+    "7Dincidence": 885,
+    "7Dincidence_delta": -35,
+    "posRat": "22,763%",
+    "patInt": 3,
+    "patInt_delta": 1,
+    "patHos": 104,
+    "patHos_delta": -18,
+    "patHosPriv": 10,
+    "patHosPriv_delta": 0,
+    "quarantine": 5890,
+    "quarantine_delta": -651
+}
