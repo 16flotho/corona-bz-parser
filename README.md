@@ -3,6 +3,9 @@ An *inofficial* parser and API for COVID-19-Data of South Tyrol from the website
 
 The data is additionally posted on Twitter on the Account [@CovidSuedtirol](https://twitter.com/CovidSuedtirol)
 
+## Warning
+Currently no hospital data can be fetched because no data is available
+
 ## Usage of the API
 Use `https://16flotho.github.io/corona-bz-parser/data/<date>.json` to get the data of the specified date. \
 The field `date` must be in the format `DD.MM.YYYY`
