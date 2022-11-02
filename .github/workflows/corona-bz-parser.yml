@@ -104,7 +104,13 @@ jobs:
             import os
             
             date = "${{ needs.check.outputs.date }}"
-            keys = { "curPositive" : "Momentan positiv", "deceased": "Verstorben", "healed": "Geheilt", "patInt": "Intensiv-Patienten", "7Dincidence": "7-Tage-Inzidenz" }
+            keys = { 
+              "curPositive" : "Momentan positiv", 
+              "deceased": "Verstorben", 
+              "healed": "Geheilt", 
+              # "patInt": "Intensiv-Patienten", 
+              "7Dincidence": "7-Tage-Inzidenz" 
+            }
 
             with open("data/" + date + ".json", "r") as f:
                 data = json.load(f)

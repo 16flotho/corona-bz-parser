@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 import fs from 'fs';
 
 const topBarURL = "https://afbs.provinz.bz.it/upload/coronavirus/topbox.js";
-const chartKh = "https://afbs.provinz.bz.it/upload/coronavirus/chart_DE_Kh30.js";
+//const chartKh = "https://afbs.provinz.bz.it/upload/coronavirus/chart_DE_Kh30.js";
 const chartQuar = "https://afbs.provinz.bz.it/upload/coronavirus/chart_DE_Quar.js";
 
 
@@ -14,9 +14,9 @@ const fieldnameMap = new Map([
     ["chardttTESTED", "tested"],
     ["chardttINZ", "7Dincidence"],
     ["chardttPOSRAT", "posRat"],
-    ["Intensivbetten", "patInt"],
-    ["Krankenhäuser", "patHos"], 
-    ["Krankenhäuser Private", "patHosPriv"],
+//    ["Intensivbetten", "patInt"],
+//    ["Krankenhäuser", "patHos"], 
+//    ["Krankenhäuser Private", "patHosPriv"],
     ["Personen in Quarantäne/häuslicher Isolation", "quarantine"]
 ]);
 
@@ -25,10 +25,14 @@ const date = new Date().toLocaleDateString('de-DE', { day: "2-digit", month: "2-
 
 Promise.all([
     fetch(topBarURL).then(parseTopBox),
-    fetch(chartKh).then(parseChartData),
+    //fetch(chartKh).then(parseChartData),
     fetch(chartQuar).then(parseChartData)
 ]).then(promises => {
-    let data = {};
+    let data = {
+        patInt: null,
+        patHos: null,
+        patHosPriv: null,
+    };
     Object.assign(data, ...promises)
     fs.mkdirSync("data", { recursive: true });
     fs.writeFileSync(`data/${date}.json`, JSON.stringify(data, null, 4));
