@@ -1,0 +1,20 @@
+{
+    "patInt": null,
+    "patHos": null,
+    "patHosPriv": null,
+    "positive": 284243,
+    "positive_delta": 60,
+    "curPositive": 1349,
+    "curPositive_delta": -197,
+    "healed": 281315,
+    "healed_delta": 257,
+    "deceased": 1579,
+    "deceased_delta": 0,
+    "tested": 862518,
+    "tested_delta": 16,
+    "7Dincidence": 228,
+    "7Dincidence_delta": -1,
+    "posRat": "14,218%",
+    "quarantine": 1349,
+    "quarantine_delta": -197
+}
