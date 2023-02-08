@@ -1,4 +1,10 @@
-# Corona South Tyrol parser and API
+# No data available anymore
+The official source of the data has stated that the publication of data related to the corona virus will be **discontinued** on the 31.12.2022. With the data also this API/Parser will come to an end and has hopefully never to be used again.
+
+---
+
+
+# Corona South Tyrol parser and API (Archive)
 An *inofficial* parser and API for COVID-19-Data of South Tyrol from the website https://www.provinz.bz.it/sicherheit-zivilschutz/zivilschutz/aktuelle-daten-zum-coronavirus.asp. The data gets parsed daily and supplied via `https://16flotho.github.io/corona-bz-parser/` 
 
 The data is additionally posted on Twitter on the Account [@CovidSuedtirol](https://twitter.com/CovidSuedtirol)
